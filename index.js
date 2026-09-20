@@ -314,3 +314,37 @@ confirmPasswordInput.addEventListener("input", function () {
         confirmPasswordMessage.className = "text-success mt-2";
     }
 });
+
+// The toggle button for password
+const togglePassword = document.querySelector("#togglePassword");
+
+togglePassword.addEventListener("click", function () {
+
+    if (passwordInput.type === "password") {
+
+        passwordInput.type = "text";
+        togglePassword.textContent = "Hide";
+
+    } else {
+
+        passwordInput.type = "password";
+        togglePassword.textContent = "Show";
+    }
+});
+
+// dark and light toggle
+const themeToggle = document.querySelector("#themeToggle");
+
+themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        themeToggle.textContent = "☀️ Light Mode";
+        themeToggle.classList.remove("btn-dark");
+        themeToggle.classList.add("btn-light");
+    } else {
+        themeToggle.textContent = "🌙 Dark Mode";
+        themeToggle.classList.remove("btn-light");
+        themeToggle.classList.add("btn-dark");
+    }
+});
