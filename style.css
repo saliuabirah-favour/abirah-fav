@@ -1,0 +1,108 @@
+body {
+          background-color: #F3F0F7;
+          
+         } 
+
+         .dark-mode {
+     background-color: #111827;
+     }
+    
+        .form-container {
+          max-width: 600px;
+          margin: auto;
+          padding: 30px;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          background-color: #3B2A5A;
+
+        }
+
+        .form-container h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+    body.dark-mode .form-container {
+        background-color: #4C3A6B;
+    }
+
+        .form-control,
+        .form-select {
+     border-radius: 10px;
+     padding: 12px;
+     border: 2px solid #e2e8f0;
+     background-color: #ffffff;
+    transition: 0.3s;
+}
+
+    .form-control:focus,
+    .form-select:focus {
+    border-color: #8b5c56;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.25);
+    outline: none;
+    
+}
+
+    .font-label {
+        font-weight: 600;
+        margin-bottom: 7px;
+        letter-spacing: 0.2px;
+
+    }
+
+.form-select {
+    cursor: pointer;
+    border-radius: 10px;
+     padding: 12px;
+     border: 2px solid #e2e8f0;
+     background-color: #ffffff;
+    transition: 0.3s;
+}
+
+.form-select:hover {
+    border-color: #8b5cf6;
+}
+.text-danger {
+font-size: 14px;
+font-weight: 500;
+}
+
+.text-succes {
+font-size: 14px;
+font-weight: 500;
+}
+
+.input-group .btn {
+    border-radius: 0 10px 10px 0;
+    border: 2px solid #e2e8f0;
+}
+
+.input-group .btn:hover {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+.btn-primary {
+    width: auto;
+    background-color: #8b5cf6;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #7c3aed;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}

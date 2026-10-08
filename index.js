@@ -255,80 +255,29 @@ dobInput.addEventListener("change", function () {
     }
 });
 
-// password sectiom
-const passwordInput = document.querySelector("#password");
-const passwordMessage = document.querySelector("#passwordMessage");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirmPassword");
 
-passwordInput.addEventListener("input", function () {
-
-    const password = passwordInput.value;
-
-    if (password.length < 8) {
-        passwordMessage.textContent = "Password must be at least 8 characters.";
-        passwordMessage.className = "text-danger mt-2";
-        return;
-    }
-
-    if (!/[A-Z]/.test(password)) {
-        passwordMessage.textContent = "Password must contain an uppercase letter.";
-        passwordMessage.className = "text-danger mt-2";
-        return;
-    }
-
-    if (!/[a-z]/.test(password)) {
-        passwordMessage.textContent = "Password must contain a lowercase letter.";
-        passwordMessage.className = "text-danger mt-2";
-        return;
-    }
-
-    if (!/[0-9]/.test(password)) {
-        passwordMessage.textContent = "Password must contain a number.";
-        passwordMessage.className = "text-danger mt-2";
-        return;
-    }
-
-    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
-        passwordMessage.textContent = "Password must contain a special character.";
-        passwordMessage.className = "text-danger mt-2";
-        return;
-    }
-
-    passwordMessage.textContent = "Password is strong ✓";
-    passwordMessage.className = "text-success mt-2";
-});
-
-// CONFIRMPASSWORD
-const confirmPasswordInput = document.querySelector("#confirmPassword");
-const confirmPasswordMessage = document.querySelector("#confirmPasswordMessage");
-
-confirmPasswordInput.addEventListener("input", function () {
-
-    if (confirmPasswordInput.value !== passwordInput.value) {
-
-        confirmPasswordMessage.textContent = "Passwords do not match.";
-        confirmPasswordMessage.className = "text-danger mt-2";
-
-    } else {
-
-        confirmPasswordMessage.textContent = "Passwords match ✓";
-        confirmPasswordMessage.className = "text-success mt-2";
-    }
-});
-
-// The toggle button for password
-const togglePassword = document.querySelector("#togglePassword");
+const togglePassword = document.getElementById("togglePassword");
+const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
 
 togglePassword.addEventListener("click", function () {
-
-    if (passwordInput.type === "password") {
-
-        passwordInput.type = "text";
-        togglePassword.textContent = "Hide";
-
+    if (password.type === "password") {
+        password.type = "text";
+        togglePassword.innerHTML = '<i class="bi bi-eye-slash"></i>';
     } else {
+        password.type = "password";
+        togglePassword.innerHTML = '<i class="bi bi-eye"></i>';
+    }
+});
 
-        passwordInput.type = "password";
-        togglePassword.textContent = "Show";
+toggleConfirmPassword.addEventListener("click", function () {
+    if (confirmPassword.type === "password") {
+        confirmPassword.type = "text";
+        toggleConfirmPassword.innerHTML = '<i class="bi bi-eye-slash"></i>';
+    } else {
+        confirmPassword.type = "password";
+        toggleConfirmPassword.innerHTML = '<i class="bi bi-eye"></i>';
     }
 });
 
